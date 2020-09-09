@@ -1,0 +1,44 @@
+//1. Crear un grupo llamado "casa".
+
+	groupadd casa
+
+
+//2. Dentro del grupo casa crear 2 usuarios, uno con el nombre de su papá o mamá y el otro usuario seria su nombre.
+
+useradd andrea
+useradd maycol
+
+adduser andrea
+	passwd andrea
+	//Ingresar la nueva contrasena para el usuario.
+
+adduser maycol 
+	passwd maycol
+	//Ingresar la nueva contrasena para el usuario.
+
+//Agregar los dos usuarios al grupo casa.
+
+	adduser andrea casa
+	adduser maycol casa
+
+//Comando para ver los grupos y los usuarios que contiene:
+
+cat /etc/group
+
+//3. Luego cambiar el nombre del grupo casa a "Familia".
+
+groupmod -g 1009 -n familia casa
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//Extra: De esta manera puedes crear el usuario y ingresarlo algrupo...
+
+useradd kaly | adduser kaly familia
+
+	passwd kaly
+	//Ingresar la nueva contrasena para el usuario.
+
+//Eliminar usuarios:
+	deluser "nombre del usuario"
+
+//Eliminar grupos:
+	groupdel "nombre del grupo"
